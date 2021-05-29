@@ -103,16 +103,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"iQuery.js":[function(require,module,exports) {
-var dom = {
-  create: function create(string) {
-    //template标签可以容纳任意元素
-    var container = document.createElement("template");
-    container.innerHTML = string;
-    return container.children[0];
-  }
-};
-},{}],"../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"main.js":[function(require,module,exports) {
+console.log("开始执行main");
+var newDiv = dom.create("<div id='aaa'>123</div>");
+console.log(newDiv);
+dom.after(newDiv, qdemo);
+},{}],"../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -141,7 +137,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51555' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52557' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -282,5 +278,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","iQuery.js"], null)
-//# sourceMappingURL=/iQuery.eafe2ff8.map
+},{}]},{},["../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
+//# sourceMappingURL=/main.837fc29f.map

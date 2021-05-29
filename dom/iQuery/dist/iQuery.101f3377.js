@@ -103,17 +103,33 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"main.js":[function(require,module,exports) {
-var dom = {
+})({"iQuery.js":[function(require,module,exports) {
+window.dom = {
+  /**
+   * 创建可嵌套的标签
+   * @param {String} string 标签字符串
+   * @returns 创建的嵌套元素的第一个子标签
+   */
   create: function create(string) {
-    //template标签可以容纳任意元素
+    //template标签可以容纳任意元素，不过其中的元素不能通过DOM直接获得
     var container = document.createElement("template");
-    container.innerHTML = string;
-    return container.children[0];
+    //去除字符串中的所有空格
+    container.innerHTML = string.trim();
+    return container.content.firstChild;
+  },
+
+  /**
+   * 在一个节点后插入新的节点
+   * @param {Node} node1 原标签
+   * @param {Node} node2 要插入的标签
+   */
+  after: function after(node1, node2) {
+    node1.parentNode.insertBefore(node2, node1);
   }
 };
-dom.create("<span>123</span>");
-},{}],"../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+console.log("iQuery加载完毕");
+},{}],"../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -142,7 +158,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51555' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52557' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -283,5 +299,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
-//# sourceMappingURL=/main.a962ff4b.map
+},{}]},{},["../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js","iQuery.js"], null)
+//# sourceMappingURL=/iQuery.101f3377.map
