@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["dom","create"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAAA,IAAIC,MAAJ,CAAW,KAAX","file":"main.a962ff4b.map","sourceRoot":"../src","sourcesContent":["dom.create(\"div\");\n"]}
