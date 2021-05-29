@@ -104,7 +104,15 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   // Override the current require with this new one
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-dom.create("div");
+var dom = {
+  create: function create(string) {
+    //template标签可以容纳任意元素
+    var container = document.createElement("template");
+    container.innerHTML = string;
+    return container.children[0];
+  }
+};
+dom.create("<span>123</span>");
 },{}],"../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
