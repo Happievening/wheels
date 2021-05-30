@@ -166,7 +166,7 @@ window.dom = {
     } else if (value.length === 2) {
       //功能2
       node.style[value[0]] = value[1];
-      return node
+      return node;
     }
   },
 
@@ -312,13 +312,20 @@ window.dom = {
 
   /** each
    * 遍历一个节点下的所有子节点，每次遍历到新元素可以对该元素执行一个函数
-   * @param {*} nodeList 节点组成的数组或伪数组
-   * @param {*} fn 回调函数
+   * @param {NodeList} nodeList 节点组成的数组或伪数组
+   * @param {function} fn 回调函数
+   * @param {boolean} textNode 是否考虑文本节点，默认为false
    */
   each(nodeList, fn, textNode = false) {
     let children = nodeList;
     for (let i = 0; i < children.length; i++) {
-      fn.call(null, children[i]);
+      if (textNode) {
+        fn.call(null, children[i]);
+      } else {
+        if (children[i].nodeType === 1) {
+          fn.call(null, children[i]);
+        }
+      }
     }
   },
 
