@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["console","log","dom","parent","s2","previous"],"mappings":";AAAAA,QAAQC,IAAI,YACZD,QAAQC,IAAIC,IAAIC,OAAOC,KACvBJ,QAAQC,IAAIC,IAAIG,SAASD,IAAI","file":"main.362057a8.map","sourceRoot":"../src","sourcesContent":["console.log(\"开始执行main\");\nconsole.log(dom.parent(s2));\nconsole.log(dom.previous(s2, true))"]}
