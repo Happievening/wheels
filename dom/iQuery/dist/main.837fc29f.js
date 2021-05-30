@@ -105,9 +105,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"main.js":[function(require,module,exports) {
 console.log("开始执行main");
-var newDiv = dom.create("<div id='aaa'>123</div>");
-console.log(newDiv);
-dom.after(newDiv, qdemo);
+console.log(dom.parent(s2));
+console.log(dom.previous(s2, true));
 },{}],"../../../../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

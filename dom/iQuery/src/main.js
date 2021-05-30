@@ -1,4 +1,3 @@
 console.log("开始执行main");
-const newDiv = dom.create("<div id='aaa'>123</div>");
-console.log(newDiv)
-dom.after(newDiv, qdemo)
+console.log(dom.parent(s2));
+console.log(dom.previous(s2, true))
